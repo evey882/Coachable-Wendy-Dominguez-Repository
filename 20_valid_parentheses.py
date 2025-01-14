@@ -21,7 +21,7 @@ class Solution:
 
         for bracket in s:
             if bracket in brackets:
-                if opened_brackets_seen and opened_brackets_seen[-1] == bracket[bracket]:
+                if opened_brackets_seen and opened_brackets_seen[-1] == brackets[bracket]:
                     opened_brackets_seen.pop()
                 else:
                     return False
