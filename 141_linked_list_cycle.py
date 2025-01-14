@@ -11,10 +11,11 @@ class Solution:
             this value is encountered again then it is safe to say that there is in fact
             a cycle. This is completed in O(N) time with O(1) space.
         """
-        curr = head
-        while curr:
-            if curr.val == None:
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
                 return True
-            curr.val = None
-            curr = curr.next
         return False
